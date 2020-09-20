@@ -1,9 +1,13 @@
 {
 	"name": "pop-file-money-counter",
-	"displayName": "pop-file-money-counter",
+	"displayName": "Pop File Money Counter",
 	"description": "Extension for counting the money in an mvm popfile",
 	"version": "0.0.1",
 	"publisher": "pfwobcke",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cooolbros/pop-file-money-counter.git"
+	},
 	"engines": {
 		"vscode": "^1.49.0"
 	},
