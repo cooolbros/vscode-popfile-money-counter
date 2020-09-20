@@ -1,3 +1,4 @@
+import { performance } from "perf_hooks";
 import * as vscode from "vscode"
 import { Table } from "./table"
 
@@ -5,6 +6,7 @@ export function activate(context: vscode.ExtensionContext)
 {
 	let disposable = vscode.commands.registerCommand("pop-file-money-counter.countMoney", () =>
 	{
+		let t0 = performance.now()
 		if (vscode.window.activeTextEditor)
 		{
 			const lines: string[] = vscode.window.activeTextEditor?.document.getText().split(/\r?\n/)
@@ -54,6 +56,7 @@ export function activate(context: vscode.ExtensionContext)
 		{
 			vscode.window.showErrorMessage("No active editor!")
 		}
+		console.log(performance.now() - t0)
 	});
 
 	context.subscriptions.push(disposable);
