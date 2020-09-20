@@ -3,6 +3,7 @@
 	"displayName": "pop-file-money-counter",
 	"description": "Extension for counting the money in an mvm popfile",
 	"version": "0.0.1",
+	"publisher": "pfwobcke",
 	"engines": {
 		"vscode": "^1.49.0"
 	},
