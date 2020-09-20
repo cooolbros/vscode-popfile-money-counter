@@ -2,7 +2,7 @@
 	"name": "pop-file-money-counter",
 	"displayName": "Pop File Money Counter",
 	"description": "Extension for counting the money in an mvm popfile",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"publisher": "pfwobcke",
 	"icon": "bootcamp.png",
 	"keywords": [
