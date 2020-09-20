@@ -5,6 +5,11 @@
 	"version": "0.1.0",
 	"publisher": "pfwobcke",
 	"icon": "bootcamp.png",
+	"keywords": [
+		"tf2",
+		"mvm",
+		"pop"
+	],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/cooolbros/pop-file-money-counter.git"
