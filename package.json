@@ -4,6 +4,7 @@
 	"description": "Extension for counting the money in an mvm popfile",
 	"version": "0.0.1",
 	"publisher": "pfwobcke",
+	"icon": "bootcamp.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/cooolbros/pop-file-money-counter.git"
