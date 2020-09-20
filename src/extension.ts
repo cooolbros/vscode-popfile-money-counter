@@ -36,14 +36,20 @@ export function activate(context: vscode.ExtensionContext)
 
 
 			// Create Table
-			let starting: string = `//\r\n// Starting Currency: ${startingCurrency}\r\n//\r\n`
+			let starting: string = `//\r\n// Starting Currency: ${startingCurrency}\r\n//`
+			let total = 0, total_a_plus = 0
 
 			let table = new Table(3).setHeader(["Wave", "Currency", "A+"])
 
 			for (let i: number = 0; i < missionCurrency.length - 1; i++)
 			{
-				table.addRow([`Wave ${i + 1}`, missionCurrency[i + 1], missionCurrency[i + 1] + 100])
+				const $ = missionCurrency[i + 1]
+				const a = $ + 100
+				total += $
+				total_a_plus += a
+				table.addRow([`Wave ${i + 1}`, $, a])
 			}
+			table.setFooter(["Total", total, total_a_plus])
 
 			const editor = vscode.window.activeTextEditor
 
