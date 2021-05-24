@@ -1,4 +1,3 @@
-import { performance } from "perf_hooks";
 import * as vscode from "vscode";
 import { Table } from "./table";
 
