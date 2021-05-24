@@ -1,59 +1,43 @@
-export class Table
-{
+export class Table {
 	header: string[]
 	columns: number
 	rows: any[][]
 	footer: string[]
 
-	constructor(columns: number)
-	{
+	constructor(columns: number) {
 		this.header = []
 		this.columns = columns
 		this.rows = []
 		this.footer = []
 	}
-	setHeader(data: any): Table
-	{
-		if (data.length === this.columns)
-		{
+	setHeader(data: string[]): Table {
+		if (data.length === this.columns) {
 			this.header = data
 		}
-		else
-		{
+		else {
 			throw new RangeError()
 		}
 		return this
 	}
-	addRow(data: any): Table
-	{
-		if (data.length === this.columns)
-		{
+	addRow(data: string[]): Table {
+		if (data.length === this.columns) {
 			this.rows.push(data)
 		}
-		else
-		{
+		else {
 			throw new RangeError()
 		}
 		return this
 	}
-	setFooter(data: any): Table
-	{
-		if (data.length === this.columns)
-		{
+	setFooter(data: string[]): Table {
+		if (data.length === this.columns) {
 			this.footer = data
 		}
-		else
-		{
+		else {
 			throw new RangeError()
 		}
 		return this
 	}
-	getText(): string
-	{
-		if (this.header.length === 0)
-		{
-			return "No Header! please add header to table"
-		}
+	getText(eol: string): string {
 
 		// Calculate longest of all keys before adding rows (all table cells will be same width)
 
@@ -64,45 +48,39 @@ export class Table
 
 
 		// Evaluate all cells in rows
-		for (let i: number = 0; i < this.rows.length - 1; i++)
-		{
-			for (let j: number = 0; j < this.rows[i].length - 1; j++)
-			{
+		for (let i: number = 0; i < this.rows.length - 1; i++) {
+			for (let j: number = 0; j < this.rows[i].length - 1; j++) {
 				len = Math.max(this.rows[i][j].toString().length, len)
 			}
 		}
 
 
-		let hr: string = `\r\n// +${new Array(this.columns).fill("-".repeat(len + 2)).join("+")}+`
+		let hr: string = `${eol}// +${new Array(this.columns).fill("-".repeat(len + 2)).join("+")}+`
 		let str: string = hr
 
 		// Add Header cells
-		str += `\r\n// |`
-		for (let i: number = 0; i < this.header.length; i++)
-		{
+		str += `${eol}// |`
+		for (let i: number = 0; i < this.header.length; i++) {
 			str += ` ${this.header[i]}${" ".repeat(len - this.header[i].toString().length)} |`
 		}
 		str += hr
 
 		// Add Rows
-		for (const row of this.rows)
-		{
-			str += `\r\n// |`
-			for (let i: number = 0; i < row.length; i++)
-			{
+		for (const row of this.rows) {
+			str += `${eol}// |`
+			for (let i: number = 0; i < row.length; i++) {
 				str += ` ${row[i]}${" ".repeat(len - row[i].toString().length)} |`
 			}
 		}
 
 		// Add Footer
 		str += hr
-		str += `\r\n// |`
-		for (const cell of this.footer)
-		{
+		str += `${eol}// |`
+		for (const cell of this.footer) {
 			str += ` ${cell}${" ".repeat(len - cell.toString().length)} |`
 		}
 		str += hr
-		str += `\r\n//`
+		str += `${eol}//`
 
 		return str
 	}
