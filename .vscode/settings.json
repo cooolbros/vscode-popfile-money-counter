@@ -1,8 +1,14 @@
 {
-  "editor.insertSpaces": true,
-  "editor.tabSize": 2,
+  "[json]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
   "files.exclude": {
-    "dist": true
+    "dist": false
   },
   "search.exclude": {
     "dist": true
