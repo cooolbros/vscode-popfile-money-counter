@@ -15,7 +15,7 @@
     "url": "https://github.com/cooolbros/pop-file-money-counter.git"
   },
   "engines": {
-    "vscode": "^1.49.0"
+    "vscode": "^1.61.0"
   },
   "categories": [
     "Other"
