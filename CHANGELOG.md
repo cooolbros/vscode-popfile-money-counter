@@ -1,5 +1,8 @@
 # Change Log
 
+## [1.1.2]
+ - Improve performance
+
 ## [1.1.1]
  - Add support for GitHub Codespaces
  - Remove unused code
