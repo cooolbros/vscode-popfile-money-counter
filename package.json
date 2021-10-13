@@ -1,45 +1,52 @@
 {
-	"name": "pop-file-money-counter",
-	"displayName": "Pop File Money Counter",
-	"description": "Extension for counting the money in an mvm popfile",
-	"version": "1.1.1",
-	"publisher": "pfwobcke",
-	"icon": "bootcamp.png",
-	"keywords": [
-		"tf2",
-		"mvm",
-		"pop"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/cooolbros/pop-file-money-counter.git"
-	},
-	"engines": {
-		"vscode": "^1.49.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"onCommand:pop-file-money-counter.countMoney"
-	],
-	"main": "./dist/extension.js",
-	"browser": "./dist/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "pop-file-money-counter.countMoney",
-				"title": "Count Money"
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.49.0",
-		"typescript": "^3.9.10"
-	}
+  "name": "pop-file-money-counter",
+  "displayName": "Pop File Money Counter",
+  "description": "Extension for counting the money in an mvm popfile",
+  "version": "1.1.1",
+  "publisher": "pfwobcke",
+  "icon": "bootcamp.png",
+  "keywords": [
+    "tf2",
+    "mvm",
+    "pop"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cooolbros/pop-file-money-counter.git"
+  },
+  "engines": {
+    "vscode": "^1.49.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:pop-file-money-counter.countMoney"
+  ],
+  "main": "./dist/extension.js",
+  "browser": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pop-file-money-counter.countMoney",
+        "title": "Count Money"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "watch-web": "webpack --watch"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.61.0",
+    "@types/webpack": "^5.28.0",
+    "@types/webpack-env": "^1.16.2",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.4",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.0"
+  }
 }
