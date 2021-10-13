@@ -1,7 +1,10 @@
+import { EndOfLine } from "vscode"
+
 export class Table {
+
 	header: string[]
 	columns: number
-	rows: any[][]
+	rows: string[][]
 	footer: string[]
 
 	constructor(columns: number) {
@@ -10,34 +13,35 @@ export class Table {
 		this.rows = []
 		this.footer = []
 	}
-	setHeader(data: string[]): Table {
+	setHeader(data: string[]): void {
 		if (data.length === this.columns) {
 			this.header = data
 		}
 		else {
 			throw new RangeError()
 		}
-		return this
 	}
-	addRow(data: string[]): Table {
+
+	addRow(data: string[]): void {
 		if (data.length === this.columns) {
 			this.rows.push(data)
 		}
 		else {
 			throw new RangeError()
 		}
-		return this
+
 	}
-	setFooter(data: string[]): Table {
+
+	setFooter(data: string[]): void {
 		if (data.length === this.columns) {
 			this.footer = data
 		}
 		else {
 			throw new RangeError()
 		}
-		return this
 	}
-	getText(eol: string): string {
+
+	getText(eol: EndOfLine): string {
 
 		// Calculate longest of all keys before adding rows (all table cells will be same width)
 
@@ -53,7 +57,6 @@ export class Table {
 				len = Math.max(this.rows[i][j].toString().length, len)
 			}
 		}
-
 
 		let hr: string = `${eol}// +${new Array(this.columns).fill("-".repeat(len + 2)).join("+")}+`
 		let str: string = hr

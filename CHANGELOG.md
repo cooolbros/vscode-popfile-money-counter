@@ -1,9 +1,11 @@
 # Change Log
 
-All notable changes to the "pop-file-money-counter" extension will be documented in this file.
+## [1.1.1]
+ - Add support for GitHub Codespaces
+ - Remove unused code
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [1.1.0]
+ - Remove unused code
 
-## [Unreleased]
-
-- Initial release
+## [1.0.0]
+ - Initial release
