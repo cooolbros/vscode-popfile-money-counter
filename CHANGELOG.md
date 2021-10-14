@@ -1,5 +1,8 @@
 # Change Log
 
+## [1.1.3]
+ - Minor changes
+
 ## [1.1.2]
  - Improve performance
 
