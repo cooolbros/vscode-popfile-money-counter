@@ -1,5 +1,3 @@
-import { EndOfLine } from "vscode"
-
 export class Table {
 
 	header: string[]
@@ -41,7 +39,7 @@ export class Table {
 		}
 	}
 
-	getText(eol: EndOfLine): string {
+	getText(eol: string): string {
 
 		// Calculate longest of all keys before adding rows (all table cells will be same width)
 

@@ -1,8 +1,9 @@
 import { EndOfLine } from "vscode"
 import { Table } from "./table"
 
-export function countMoney(str: string, eol: EndOfLine): string {
+export function countMoney(str: string, endOfLine: EndOfLine): string {
 	const lines = str.split(/\r?\n/)
+	const eol: "\r\n" | "\n" = endOfLine == EndOfLine.CRLF ? "\r\n" : "\n"
 
 	let wave: number = 0
 	let wave0: boolean = true

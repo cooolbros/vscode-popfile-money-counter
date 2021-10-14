@@ -6,7 +6,8 @@ export default {
 		extension: "./src/extension.ts"
 	},
 	output: {
-		filename: "[name].js"
+		filename: "[name].js",
+		libraryTarget: "commonjs"
 	},
 	resolve: {
 		mainFields: ["browser", "module", "main"],

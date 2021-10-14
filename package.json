@@ -37,12 +37,13 @@
     "vscode:prepublish": "npm run compile",
     "compile": "webpack",
     "watch": "webpack --watch",
-    "watch-web": "webpack --watch"
+    "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
   },
   "devDependencies": {
     "@types/vscode": "^1.61.0",
     "@types/webpack": "^5.28.0",
     "@types/webpack-env": "^1.16.2",
+    "@vscode/test-web": "^0.0.15",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.3.0",
     "typescript": "^4.4.4",
