@@ -1,58 +1,58 @@
 {
-	"name": "pop-file-money-counter",
-	"displayName": "Pop File Money Counter",
-	"description": "Extension for counting the money in an mvm popfile",
-	"version": "1.1.3",
-	"publisher": "pfwobcke",
-	"icon": "bootcamp.png",
-	"keywords": [
-		"tf2",
-		"mvm",
-		"pop"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/cooolbros/pop-file-money-counter.git"
-	},
-	"engines": {
-		"vscode": "^1.61.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"onCommand:pop-file-money-counter.countMoney"
-	],
-	"main": "./dist/extension.js",
-	"browser": "./dist/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "pop-file-money-counter.countMoney",
-				"title": "Count Money"
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "webpack",
-		"watch": "webpack --watch",
-		"run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.61.0",
-		"@types/webpack": "^5.28.0",
-		"@types/webpack-env": "^1.16.2",
-		"@vscode/test-web": "^0.0.15",
-		"ts-loader": "^9.2.6",
-		"ts-node": "^10.3.0",
-		"typescript": "^4.4.4",
-		"webpack": "^5.58.2",
-		"webpack-cli": "^4.9.0"
-	},
-	"__metadata": {
-		"id": "d7b3e20e-fd63-42e7-a613-22c148e4cb65",
-		"publisherDisplayName": "pfwobcke",
-		"publisherId": "0bca7cad-ed90-49e6-88a6-828825345806"
-	}
+  "name": "pop-file-money-counter",
+  "displayName": "Pop File Money Counter",
+  "description": "Extension for counting the money in an mvm popfile",
+  "version": "1.1.3",
+  "publisher": "pfwobcke",
+  "icon": "bootcamp.png",
+  "keywords": [
+    "tf2",
+    "mvm",
+    "pop"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cooolbros/pop-file-money-counter.git"
+  },
+  "engines": {
+    "vscode": "^1.61.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:pop-file-money-counter.countMoney"
+  ],
+  "main": "./dist/extension.js",
+  "browser": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pop-file-money-counter.countMoney",
+        "title": "Count Money"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.61.0",
+    "@types/webpack": "^5.28.0",
+    "@types/webpack-env": "^1.16.2",
+    "@vscode/test-web": "^0.0.15",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.4",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.0"
+  },
+  "__metadata": {
+    "id": "d7b3e20e-fd63-42e7-a613-22c148e4cb65",
+    "publisherDisplayName": "pfwobcke",
+    "publisherId": "0bca7cad-ed90-49e6-88a6-828825345806"
+  }
 }
