@@ -1,5 +1,8 @@
 # Change Log
 
+## [1.2.1]
+ - Minor changes
+
 ## [1.2.0]
  - Use VDF Parser
 
