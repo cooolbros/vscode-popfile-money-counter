@@ -16,8 +16,8 @@ export function activate(context: ExtensionContext) {
 			if (money.Waves) {
 				const wavesSection: string[][] = []
 				for (let i: number = 0; i < money.Waves.length; i++) {
-					const waveCurrency = money.Waves[i].reduce((a: number, b: number) => a + b)
-					const waveCurrencyAPlus = waveCurrency + 100
+					const waveCurrency = money.Waves[i].reduce((a: number, b: number) => a + b, 0)
+					const waveCurrencyAPlus = waveCurrency + (waveCurrency != 0 ? 100 : 0)
 					missionCurrency += waveCurrency
 					missionCurrencyAPlus += waveCurrencyAPlus
 					wavesSection.push([`Wave ${i + 1}`, `${waveCurrency}`, `${waveCurrencyAPlus}`])
@@ -31,14 +31,8 @@ export function activate(context: ExtensionContext) {
 			edit.insert(new Position(editor.selection.start.line, 0), `//${eol}// Starting Currency: ${money.StartingCurrency ?? 0}${eol}//${eol}${formatTable(eol, ...tableContents)}//`)
 		}
 		catch (e: unknown) {
-
-			if (e instanceof VDFSyntaxError) {
+			if (e instanceof VDFSyntaxError || e instanceof InfiniteLoopError) {
 				window.showErrorMessage(e.toString())
-			}
-			else if (e instanceof InfiniteLoopError) {
-				const out = window.createOutputChannel("Pop File Money Counter")
-				out.appendLine(e.toString())
-				out.show()
 			}
 			edit.insert(new Position(editor.selection.start.line, 0), countMoney(editor.document.getText(), editor.document.eol))
 		}

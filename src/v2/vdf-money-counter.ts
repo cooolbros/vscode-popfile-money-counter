@@ -129,9 +129,19 @@ class VDFTokeniser {
 					_character++
 				}
 				else {
-					currentToken += this.str[j]
-					j++
-					_character++
+					if (this.str[j] == "{" || this.str[j] == "}") {
+						if (currentToken == "") {
+							currentToken += this.str[j]
+							j++
+							_character++
+						}
+						break
+					}
+					else {
+						currentToken += this.str[j]
+						j++
+						_character++
+					}
 				}
 			}
 		}
