@@ -5,6 +5,6 @@ A lightweight extension for counting money in custom MvM missions in Team Fortre
 Demo:
 ![](demo.gif)
 
-Github: https://github.com/cooolbros/pop-file-money-counter
+Github: https://github.com/cooolbros/vscode-popfile-money-counter
 
 VS Marketplace: https://marketplace.visualstudio.com/items?itemName=pfwobcke.pop-file-money-counter

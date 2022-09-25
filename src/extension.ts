@@ -4,7 +4,7 @@ import { formatTable } from "./v2/table";
 import { InfiniteLoopError, VDF, VDFSyntaxError } from "./v2/vdf-money-counter";
 
 export function activate(context: ExtensionContext) {
-	context.subscriptions.push(commands.registerTextEditorCommand("pop-file-money-counter.countMoney", (editor: TextEditor, edit: TextEditorEdit) => {
+	context.subscriptions.push(commands.registerTextEditorCommand("vscode-popfile-money-counter.countMoney", (editor: TextEditor, edit: TextEditorEdit) => {
 		try {
 			const money = VDF.countMoney(editor.document.getText())
 			const tableContents: string[][][] = []
