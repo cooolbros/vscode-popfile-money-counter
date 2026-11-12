@@ -1,4 +1,4 @@
-# Pop File Money Counter
+# VSCode Popfile Money Counter
 
 A lightweight extension for counting money in custom MvM missions in Team Fortress 2
 
