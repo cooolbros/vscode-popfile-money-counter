@@ -1,0 +1,6 @@
+.github
+.vscode
+pnpm-*.yaml
+rspack.config.mts
+src
+tsconfig.json
