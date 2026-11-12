@@ -1,5 +1,8 @@
 # Change Log
 
+## [1.2.3]
+ - Bundle with rspack
+
 ## [1.2.2]
  - Include waves with 0 currency in table
  - Update VDF parser
