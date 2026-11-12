@@ -1,7 +1,10 @@
 # Change Log
 
-## [1.2.3]
+## [1.2.4]
  - Bundle with rspack
+
+## [1.2.3]
+ - Rename extension id to `vscode-popfile-money-counter`
 
 ## [1.2.2]
  - Include waves with 0 currency in table
