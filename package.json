@@ -43,5 +43,6 @@
         "@vscode/test-web": "^0.0.15",
         "ts-checker-rspack-plugin": "^1.8.0",
         "typescript": "^7.0.2"
-    }
+    },
+    "packageManager": "pnpm@12.18.0"
 }
