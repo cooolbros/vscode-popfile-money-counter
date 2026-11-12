@@ -1,5 +1,8 @@
 # Change Log
 
+## [1.2.5]
+ - Remove unused files
+
 ## [1.2.4]
  - Bundle with rspack
 
