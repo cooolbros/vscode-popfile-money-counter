@@ -1,2 +1,3 @@
 allowBuilds:
   '@playwright/browser-chromium': true
+  '@vscode/vsce-sign': true
