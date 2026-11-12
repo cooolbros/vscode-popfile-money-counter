@@ -20,6 +20,9 @@
     "categories": [
         "Other"
     ],
+    "activationEvents": [
+        "onCommand:vscode-popfile-money-counter.countMoney"
+    ],
     "main": "./dist/extension.js",
     "browser": "./dist/extension.js",
     "contributes": {
