@@ -2,7 +2,7 @@
     "name": "vscode-popfile-money-counter",
     "displayName": "VSCode Popfile Money Counter",
     "description": "Extension for counting the money in an mvm popfile",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "publisher": "pfwobcke",
     "icon": "bootcamp.png",
     "keywords": [
