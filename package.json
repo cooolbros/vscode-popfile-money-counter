@@ -12,16 +12,13 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/cooolbros/vscode-popfile-money-counter.git"
+        "url": "https://github.com/cooolbros/vscode-popfile-money-counter"
     },
     "engines": {
         "vscode": "^1.61.0"
     },
     "categories": [
         "Other"
-    ],
-    "activationEvents": [
-        "onCommand:vscode-popfile-money-counter.countMoney"
     ],
     "main": "./dist/extension.js",
     "browser": "./dist/extension.js",
@@ -34,10 +31,10 @@
         ]
     },
     "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "webpack",
-        "watch": "webpack --watch",
-        "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
+        "vscode:prepublish": "pnpm build",
+        "dev": "rspack build --watch --mode none",
+        "build": "rspack build",
+        "browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
     },
     "devDependencies": {
         "@types/vscode": "^1.61.0",
