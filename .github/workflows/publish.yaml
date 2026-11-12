@@ -22,3 +22,4 @@ jobs:
       - run: pnpm install
       - run: pnpm build
       - run: pnpm vsce publish --oidc
+      - run: pnpm ovsx publish --trusted-publishing
