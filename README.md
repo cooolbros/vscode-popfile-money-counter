@@ -7,4 +7,4 @@ Demo:
 
 Github: https://github.com/cooolbros/vscode-popfile-money-counter
 
-VS Marketplace: https://marketplace.visualstudio.com/items?itemName=pfwobcke.pop-file-money-counter
+VS Marketplace: https://marketplace.visualstudio.com/items?itemName=pfwobcke.vscode-popfile-money-counter
