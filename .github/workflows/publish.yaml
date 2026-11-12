@@ -9,7 +9,7 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if: github.ref_type == 'tag'
+    if: github.ref_type == 'tag' || github.event_name == 'workflow_dispatch'
     permissions:
       contents: read
       id-token: write
