@@ -37,6 +37,7 @@
         "vscode:prepublish": "pnpm build",
         "dev": "rspack build --watch --mode none",
         "build": "rspack build",
+        "lint": "oxlint",
         "browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
     },
     "devDependencies": {
@@ -46,6 +47,9 @@
         "@vscode/test-web": "^0.0.81",
         "@vscode/vsce": "^4.1.0",
         "ovsx": "^1.4.0",
+        "oxlint": "^1.93.0",
+        "oxlint-config": "github:cooolbros/oxlint-config",
+        "oxlint-tsgolint": "^7.0.2007",
         "ts-checker-rspack-plugin": "^1.8.0",
         "typescript": "^7.0.2"
     },
