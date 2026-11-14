@@ -53,5 +53,8 @@
         "ts-checker-rspack-plugin": "^1.8.0",
         "typescript": "^7.0.2"
     },
+    "vsce": {
+        "dependencies": false
+    },
     "packageManager": "pnpm@12.18.0"
 }

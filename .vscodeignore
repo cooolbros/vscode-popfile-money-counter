@@ -1,6 +1,7 @@
 .github
 .gitignore
 .vscode
+oxlint.config.ts
 pnpm-*.yaml
 rspack.config.mts
 src
