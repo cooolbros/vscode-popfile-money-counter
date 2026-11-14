@@ -1,5 +1,8 @@
 # Change Log
 
+## [1.2.7]
+ - Performance improvements
+
 ## [1.2.6]
  - Remove unused code
 
