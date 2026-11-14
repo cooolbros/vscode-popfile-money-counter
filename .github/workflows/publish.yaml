@@ -33,4 +33,4 @@ jobs:
           pnpm ovsx publish --packagePath "$vsix" --trusted-publishing
           title=$(jq -r "\"\(.displayName) ${version}\"" package.json)
           notes=$(awk "/^$/ { if (a) exit 1 - b } { if (a) { print; b = 1 } } /^## \[${version}\]$/ { a = 1; b = 0 } END { exit 1 - b }" CHANGELOG.md)
-          gh release create "v$version" $vsix --title "$title" --notes "$notes" --draft
+          gh release create "v$version" "$vsix" --title "$title" --notes "$notes"
