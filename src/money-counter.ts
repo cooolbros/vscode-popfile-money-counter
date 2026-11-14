@@ -13,7 +13,7 @@ export function countMoney(str: string, endOfLine: EndOfLine): string {
 
 	for (let i: number = 0; i < lines.length; i++) {
 		if (wave0) {
-			if (lines[i].includes("StartingCurrency")) {
+			if (lines[i].toLowerCase().includes("StartingCurrency".toLowerCase())) {
 				startingCurrency = parseInt(lines[i].split(/\s+/)[2])
 				wave0 = false
 			}
