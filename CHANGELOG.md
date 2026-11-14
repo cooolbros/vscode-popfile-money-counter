@@ -1,5 +1,8 @@
 # Change Log
 
+## [1.2.10]
+ - Fix Github action
+
 ## [1.2.9]
  - Fix Github action
 
