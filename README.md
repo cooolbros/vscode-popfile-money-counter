@@ -8,3 +8,5 @@ Demo:
 Github: https://github.com/cooolbros/vscode-popfile-money-counter
 
 VS Marketplace: https://marketplace.visualstudio.com/items?itemName=pfwobcke.vscode-popfile-money-counter
+
+Open VSX Registry: https://open-vsx.org/extension/pfwobcke/vscode-popfile-money-counter

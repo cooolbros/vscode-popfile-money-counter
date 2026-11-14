@@ -6,21 +6,29 @@ on:
       - main
     tags:
       - '*'
-  workflow_dispatch:
 
 jobs:
   publish:
+    if: github.ref_type == 'tag' && startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     permissions:
       contents: read
       id-token: write
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: latest
-      - uses: pnpm/action-setup@v6
-      - run: pnpm install
-      - run: pnpm build
-      - run: pnpm vsce publish --oidc
-      - run: pnpm ovsx publish --trusted-publishing
+      - uses: ./.github/actions/build
+
+      # https://code.visualstudio.com/api/working-with-extensions/publishing-extension
+      # https://github.com/eclipse-openvsx/openvsx/blob/main/cli/README.md
+      # https://cli.github.com/manual/gh_release_create
+      - name: Publish
+        run: |
+          pnpm vsce package --no-dependencies
+          tag="${{ github.ref }}"
+          version="${tag:11}"
+          vsix="$(basename ${{ github.repository }})-${version}.vsix"
+          pnpm vsce publish --packagePath "$vsix" --oidc
+          pnpm ovsx publish --packagePath "$vsix" --trusted-publishing
+          title=$(jq -r "\"\(.displayName) ${version}\"" package.json)
+          notes=$(awk "/^$/ { if (a) exit; } { if (a) print $0; } /^##[${version}]/ { a = 1 }" CHANGELOG.md)
+          gh release create "$version" --title "$title" --notes "$notes" --draft
