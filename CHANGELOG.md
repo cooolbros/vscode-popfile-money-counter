@@ -1,5 +1,8 @@
 # Change Log
 
+## [1.2.6]
+ - Remove unused code
+
 ## [1.2.5]
  - Remove unused files
 

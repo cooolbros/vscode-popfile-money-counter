@@ -1,7 +1,7 @@
-import { commands, EndOfLine, ExtensionContext, Position, TextEditor, TextEditorEdit, window } from "vscode";
-import { countMoney } from "./money-counter";
-import { formatTable } from "./v2/table";
-import { InfiniteLoopError, VDF, VDFSyntaxError } from "./v2/vdf-money-counter";
+import { commands, EndOfLine, ExtensionContext, Position, TextEditor, TextEditorEdit, window } from "vscode"
+import { countMoney } from "./money-counter"
+import { formatTable } from "./v2/table"
+import { InfiniteLoopError, VDF, VDFSyntaxError } from "./v2/vdf-money-counter"
 
 export function activate(context: ExtensionContext) {
 	context.subscriptions.push(commands.registerTextEditorCommand("vscode-popfile-money-counter.countMoney", (editor: TextEditor, edit: TextEditorEdit) => {
@@ -38,5 +38,3 @@ export function activate(context: ExtensionContext) {
 		}
 	}))
 }
-
-export function deactivate() { }
