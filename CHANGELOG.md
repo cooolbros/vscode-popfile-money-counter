@@ -1,5 +1,8 @@
 # Change Log
 
+## [1.2.8]
+ - Fix `StartingCurrency` case sensitivity
+
 ## [1.2.7]
  - Performance improvements
 
