@@ -9,13 +9,13 @@ export function countMoney(str: string, endOfLine: EndOfLine): string {
 	let wave0: boolean = true
 	let startingCurrency: number = 0
 	let waveCurrency: number = 0
-	let missionCurrency: number[] = []
+	const missionCurrency: number[] = []
 
 	for (let i: number = 0; i < lines.length; i++) {
 		if (wave0) {
 			if (lines[i].includes("StartingCurrency")) {
 				startingCurrency = parseInt(lines[i].split(/\s+/)[2])
-				wave0 = false;
+				wave0 = false
 			}
 		}
 		// Add money to current wave

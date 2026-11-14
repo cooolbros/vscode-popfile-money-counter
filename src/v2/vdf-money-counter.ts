@@ -22,7 +22,8 @@ class VDFTokeniser {
 	public line: number = 0
 	public character: number = 0
 	public quoted: 0 | 1 = 0
-	constructor(str: string, options?: VDFTokeniserOptions) {
+
+	public constructor(str: string, options?: VDFTokeniserOptions) {
 		this.str = str
 		this.options = {
 			allowMultilineStrings: options?.allowMultilineStrings ?? false,
@@ -30,7 +31,8 @@ class VDFTokeniser {
 			returnComments: options?.returnComments ?? false
 		}
 	}
-	next(lookAhead: boolean = false): string {
+
+	public next(lookAhead: boolean = false): string {
 		let currentToken: string = ""
 		let j: number = this.position
 		let _line: number = this.line
@@ -156,8 +158,10 @@ class VDFTokeniser {
 }
 
 export class VDFSyntaxError extends Error {
-	constructor(message: string, public range: Range) {
+	public readonly range: Range
+	public constructor(message: string, range: Range) {
 		super(message)
+		this.range = range
 	}
 }
 
@@ -168,13 +172,13 @@ export interface IMoney {
 }
 
 export class InfiniteLoopError extends Error {
-	constructor(functionName: string, missingToken: string, objectName: string) {
+	public constructor(functionName: string, missingToken: string, objectName: string) {
 		super(`${functionName}: Could not find closing ${missingToken} for ${objectName}!`)
 	}
 }
 
 export class VDF {
-	static countMoney(str: string): IMoney {
+	public static countMoney(str: string): IMoney {
 		const tokeniser = new VDFTokeniser(str)
 		const money: IMoney = {}
 		const parseDocument = () => {

@@ -1,17 +1,18 @@
 export class Table {
 
-	header: string[]
-	columns: number
-	rows: string[][]
-	footer: string[]
+	private header: string[]
+	private readonly columns: number
+	private readonly rows: string[][]
+	private footer: string[]
 
-	constructor(columns: number) {
+	public constructor(columns: number) {
 		this.header = []
 		this.columns = columns
 		this.rows = []
 		this.footer = []
 	}
-	setHeader(data: string[]): void {
+
+	public setHeader(data: string[]): void {
 		if (data.length === this.columns) {
 			this.header = data
 		}
@@ -20,17 +21,16 @@ export class Table {
 		}
 	}
 
-	addRow(data: string[]): void {
+	public addRow(data: string[]): void {
 		if (data.length === this.columns) {
 			this.rows.push(data)
 		}
 		else {
 			throw new RangeError()
 		}
-
 	}
 
-	setFooter(data: string[]): void {
+	public setFooter(data: string[]): void {
 		if (data.length === this.columns) {
 			this.footer = data
 		}
@@ -39,30 +39,30 @@ export class Table {
 		}
 	}
 
-	getText(eol: string): string {
+	public getText(eol: string): string {
 
 		// Calculate longest of all keys before adding rows (all table cells will be same width)
 
 		// len initializes to the longest of the header elements, because
 		// it has different formatting rules it's not included in
 		// the rows array
-		let len: number = this.header.reduce((total, current) => Math.max(total, current.toString().length), 0)
+		let len: number = this.header.reduce((total, current) => Math.max(total, current.length), 0)
 
 
 		// Evaluate all cells in rows
 		for (let i: number = 0; i < this.rows.length - 1; i++) {
 			for (let j: number = 0; j < this.rows[i].length - 1; j++) {
-				len = Math.max(this.rows[i][j].toString().length, len)
+				len = Math.max(this.rows[i][j].length, len)
 			}
 		}
 
-		let hr: string = `${eol}// +${new Array(this.columns).fill("-".repeat(len + 2)).join("+")}+`
+		const hr: string = `${eol}// +${Array.from({ length: this.columns }).fill("-".repeat(len + 2)).join("+")}+`
 		let str: string = hr
 
 		// Add Header cells
 		str += `${eol}// |`
 		for (let i: number = 0; i < this.header.length; i++) {
-			str += ` ${this.header[i]}${" ".repeat(len - this.header[i].toString().length)} |`
+			str += ` ${this.header[i]}${" ".repeat(len - this.header[i].length)} |`
 		}
 		str += hr
 
@@ -70,7 +70,7 @@ export class Table {
 		for (const row of this.rows) {
 			str += `${eol}// |`
 			for (let i: number = 0; i < row.length; i++) {
-				str += ` ${row[i]}${" ".repeat(len - row[i].toString().length)} |`
+				str += ` ${row[i]}${" ".repeat(len - row[i].length)} |`
 			}
 		}
 
@@ -78,7 +78,7 @@ export class Table {
 		str += hr
 		str += `${eol}// |`
 		for (const cell of this.footer) {
-			str += ` ${cell}${" ".repeat(len - cell.toString().length)} |`
+			str += ` ${cell}${" ".repeat(len - cell.length)} |`
 		}
 		str += hr
 		str += `${eol}//`
